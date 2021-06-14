@@ -107,7 +107,8 @@ update_now(){
 	mkdir -p /tmp/v2ray && cd /tmp/v2ray
 
 	echo_date "开始下载校验文件：md5sum.txt"
-	wget --no-check-certificate --timeout=20 -qO - $url_main/$1/md5sum.txt > /tmp/v2ray/md5sum.txt
+	#wget --no-check-certificate --timeout=20 -qO - $url_main/$1/md5sum.txt > /tmp/v2ray/md5sum.txt
+	curl $url_main/$1/md5sum.txt > /tmp/v2ray/md5sum.txt
 	if [ "$?" != "0" ];then
 		echo_date "md5sum.txt下载失败！"
 		md5sum_ok=0
@@ -117,7 +118,8 @@ update_now(){
 	fi
 	
 	echo_date "开始下载v2ray程序"
-	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ray
+	#wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ray
+	curl -o v2ray $url_main/$1/v2ray
 	#curl -L -H "Cache-Control: no-cache" -o /tmp/v2ray/v2ray $url_main/$1/v2ray
 	if [ "$?" != "0" ];then
 		echo_date "v2ray下载失败！"
@@ -128,7 +130,8 @@ update_now(){
 	fi
 
 	echo_date "开始下载v2ctl程序"
-	wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ctl
+	#wget --no-check-certificate --timeout=20 --tries=1 $url_main/$1/v2ctl
+	curl -o $url_main/$1/v2ctl
 	if [ "$?" != "0" ];then
 		echo_date "v2ctl下载失败！"
 		v2ctl_ok=0
