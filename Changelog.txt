@@ -3,6 +3,7 @@ fancyss_arm Changelog
 4.2.3
    - update	修改下载地址指向
    - update	添加v2ray kcp 伪装选项
+   - fix	修复wget访问github链接报错问题，切换为curl访问
 
 4.2.2
    - fix	修复v2ray_dns无法使用的问题。
