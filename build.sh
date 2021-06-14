@@ -49,7 +49,7 @@ do_build() {
 	"home_url":"$HOME_URL",
 	"md5":"$md5value",
 	"name":"$MODULE",
-	"tar_url": "https://raw.githubusercontent.com/moetaku/fancyss_arm/master/fancyss_arm/shadowsocks.tar.gz", 
+	"tar_url": "https://raw.githubusercontent.com/moetaku/fancyss_arm/master/shadowsocks.tar.gz", 
 	"title":"$TITLE",
 	"version":"$VERSION"
 	}

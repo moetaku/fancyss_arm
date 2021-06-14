@@ -3638,6 +3638,8 @@ function set_cron(action) {
 															<option value="srtp">伪装视频通话(srtp)</option>
 															<option value="utp">伪装BT下载(uTP)</option>
 															<option value="wechat-video">伪装微信视频通话</option>
+															<option value="dtls">伪装dtls</option>
+															<option value="wireguard">伪装wireguard</option>
 														</select>
 													</td>
 												</tr>
