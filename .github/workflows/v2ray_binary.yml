@@ -19,7 +19,7 @@ jobs:
       - name: Run update script
         run: |
             cd v2ray_binary
-            sh ./update_bin.sh
+            bash ./update_bin.sh
         shell: bash
 
       - name: Commit file changes
