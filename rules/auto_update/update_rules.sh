@@ -37,11 +37,11 @@ echo =================
 # get chnroute for shadowsocks chn and game mode
 
 # Deprecated in 2019-8-1
-# wget -4 -O- http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest > apnic.txt
-# cat apnic.txt| awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > chnroute1.txt
+wget -4 -O- http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest > apnic.txt
+cat apnic.txt| awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > chnroute1.txt
 
 # use ipip_country_cn ip database sync by https://github.com/firehol/blocklist-ipsets from ipip.net（source: https://cdn.ipip.net/17mon/country.zip）.
-curl https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/ipip_country/ipip_country_cn.netset | sed '/^#/d' >chnroute1.txt
+# curl https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/ipip_country/ipip_country_cn.netset | sed '/^#/d' >chnroute1.txt
 
 md5sum3=$(md5sum chnroute1.txt | sed 's/ /\n/g' | sed -n 1p)
 md5sum4=$(md5sum ../chnroute.txt | sed 's/ /\n/g' | sed -n 1p)
@@ -81,8 +81,8 @@ fi
 echo =================
 # ======================================
 # use apnic data
-wget -4 -O- http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest >apnic.txt
-cat apnic.txt | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' >chnroute1.txt
+#wget -4 -O- http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest >apnic.txt
+#cat apnic.txt | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' >chnroute1.txt
 
 echo -e "[Local Routing]\n## China mainland routing blocks\n## Sources: https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest" >Routing.txt
 echo -n "## Last update: " >>Routing.txt
