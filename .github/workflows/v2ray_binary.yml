@@ -28,7 +28,7 @@ jobs:
             git config --local user.name "github-actions[bot]"
             git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -am "Auto update v2ray_binary by github actions." v2ray_binary/*
+            git commit -m "Auto update v2ray_binary by github actions." v2ray_binary/*
             git push
           else
             echo "No modifications."
