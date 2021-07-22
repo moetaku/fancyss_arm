@@ -47,7 +47,11 @@ fi
 
 unzip -o ./v2ray-linux-arm32-v5.zip -d ./tmp
 
-upx --lzma -9 ./tmp/v2ctl ./tmp/v2ray
+wget https://github.com/upx/upx/releases/download/v3.94/upx-3.94-amd64_linux.tar.xz
+xz -d upx-3.94-amd64_linux.tar.xz
+tar -xvf upx-3.94-amd64_linux.tar
+
+./upx-3.94-amd64_linux/upx --lzma -9 ./tmp/v2ctl ./tmp/v2ray
 res=$?
 if [[ "$res" == "0" ]] || [[ "$res" == "2" ]]; then 
     echo "压缩成功"
@@ -80,6 +84,14 @@ fi
 
 if [ -e './v2ray-linux-arm32-v5.zip' ]; then 
     rm -rf ./v2ray-linux-arm32-v5.zip
+fi
+
+if [ -e './upx-3.94-amd64_linux' ]; then 
+    rm -rf ./upx-3.94-amd64_linux
+fi
+
+if [ -e './upx-3.94-amd64_linux.tar' ]; then 
+    rm -rf ./upx-3.94-amd64_linux.tar
 fi
 
 echo "脚本执行完毕"
