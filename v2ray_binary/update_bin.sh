@@ -47,7 +47,7 @@ fi
 
 unzip -o ./v2ray-linux-arm32-v5.zip -d ./tmp
 
-upx --lzma --ultra-brute ./tmp/v2ctl ./tmp/v2ray
+upx --lzma -9 ./tmp/v2ctl ./tmp/v2ray
 res=$?
 if [[ "$res" == "0" ]] || [[ "$res" == "2" ]]; then 
     echo "压缩成功"
