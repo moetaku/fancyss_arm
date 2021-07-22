@@ -1,5 +1,8 @@
 fancyss_arm Changelog
 ===========================================
+4.2.4
+   - update	更新v2ray二进制到v4.40.1；
+   - fix	修复v2ray更新脚本
 4.2.3
    - update	修改下载地址指向
    - update	添加v2ray kcp 伪装选项
