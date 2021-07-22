@@ -72,6 +72,7 @@ echo "复制完毕，写入md5"
 cd ./$ver
 md5sum v2ctl > md5sum.txt
 md5sum v2ray >> md5sum.txt
+cat md5sum.txt
 cd ..
 
 echo "修改版本号..."
