@@ -1,0 +1,19 @@
+name: test update v2ray binary
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Run update script
+        run: |
+            cd v2ray_binary
+            bash ./test_update_bin.sh
+        shell: bash
+
