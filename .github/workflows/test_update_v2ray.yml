@@ -15,5 +15,6 @@ jobs:
         run: |
             cd v2ray_binary
             bash ./test_update_bin.sh
+            arch
         shell: bash
 
