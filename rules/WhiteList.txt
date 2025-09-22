@@ -2,7 +2,7 @@
 ## China mainland domains
 ## Get the latest database: https://github.com/xinhugo/Free-List/blob/master/WhiteList.txt
 ## Report an issue: https://github.com/xinhugo/Free-List/issues
--e ## Last update: 2025-09-20
+-e ## Last update: 2025-09-22
 
 .*\b0\.zone
 .*\b00\.net
